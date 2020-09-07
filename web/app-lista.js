@@ -129,7 +129,7 @@ usuario.metodos = {
 }
 
 usuario.templates = {
-    tabela:`<table id="tbllista" class="table table-hover col-md-12" style="width: 800px;">
+    tabela:`<table id="tbllista" class="table table-hover table-dark col-md-12" style="width: 800px;">
                 <thead>
                     <tr>
                         <th scope="col">Posição</th>
