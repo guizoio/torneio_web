@@ -33,7 +33,7 @@ usuario.metodos = {
                         aaSorting: [[0, "asc"]],
                         dom: 'Bfrtip',
                         lengthMenu: [ [10, 25, 50, -1], ['10 linhas', '25 linhas', '50 linhas', 'Todas'], ],
-                        columnDefs: [ { targets: [0], className: 'text-center' } ],
+                        columnDefs: [ { targets: [3], className: 'text-center' } ],
                         buttons: [ 'pageLength' ],
                         "data": lista,
                         "columns": [
@@ -41,17 +41,17 @@ usuario.metodos = {
                             { data: "nick" },
                             { data: "nometime" },
                             { data: "abate" }                
-                        ]
-                        // ,
-                        // "language": {
-                        //     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
-                        //     , buttons: {
-                        //         pageLength: {
-                        //             _: "Mostrar %d linhas",
-                        //             '-1': "Mostrar Todos"
-                        //         }
-                        //     }
-                        // }
+                        ],
+                        "language": {
+                            "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                            , buttons: {
+                                pageLength: {
+                                    _: "Mostrar %d linhas",
+                                    '-1': "Mostrar Todos"
+                                }
+                            }
+                        }
+                        
                     });
                     setTimeout(()=>{
                         $("div.dataTables_wrapper div.dataTables_filter input").attr('placeholder', 'Pesquise os usuários aqui...');
@@ -91,7 +91,7 @@ usuario.metodos = {
                         aaSorting: [[0, "asc"]],
                         dom: 'Bfrtip',
                         lengthMenu: [ [10, 25, 50, -1], ['10 linhas', '25 linhas', '50 linhas', 'Todas'], ],
-                        columnDefs: [ { targets: [0], className: 'text-center' } ],
+                        columnDefs: [ { targets: [3], className: 'text-center' } ],
                         buttons: [ 'pageLength' ],
                         "data": lista,
                         "columns": [
@@ -100,16 +100,16 @@ usuario.metodos = {
                             { data: "nometime" },
                             { data: "asist" }                
                         ]
-                        // ,
-                        // "language": {
-                        //     "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
-                        //     , buttons: {
-                        //         pageLength: {
-                        //             _: "Mostrar %d linhas",
-                        //             '-1': "Mostrar Todos"
-                        //         }
-                        //     }
-                        // }
+                        ,
+                        "language": {
+                            "url": "http://cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Portuguese-Brasil.json"
+                            , buttons: {
+                                pageLength: {
+                                    _: "Mostrar %d linhas",
+                                    '-1': "Mostrar Todos"
+                                }
+                            }
+                        }
                     });
                     setTimeout(()=>{
                         $("div.dataTables_wrapper div.dataTables_filter input").attr('placeholder', 'Pesquise os usuários aqui...');
@@ -140,7 +140,7 @@ usuario.templates = {
                 </thead>
             </table>`,
 
-    tabela2:`<table id="tbllista2" class="table table-hover col-md-12" style="width: 800px;">
+    tabela2:`<table id="tbllista2" class="table table-hover table-dark col-md-12" style="width: 800px;">
             <thead>
                 <tr>
                     <th scope="col">Posição</th>
