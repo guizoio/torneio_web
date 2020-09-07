@@ -44,7 +44,7 @@ form.metodos = {
     
                 console.log(dados);
     
-                var url = "http://localhost:4403/torneio/cadastrar";
+                var url = "http://192.12.115.39:4403/torneio/cadastrar";
                 var retorno = form.metodos.cadastro(dados,url);
                 console.log("DEPOIS QUE CHAMA FUNCAO: ", retorno);      
             }
