@@ -1,7 +1,6 @@
 var form = {};
 
 
-
 form.metodos = {  
     
     funcao:async () => {
@@ -31,7 +30,7 @@ form.metodos = {
             else{
                 console.log("cadastrar");
                 var dados = {}
-    
+                var novo_numero = '('+numero+')'; 
                 dados = {
                     top: top,
                     jg: jg,
@@ -39,7 +38,7 @@ form.metodos = {
                     adc: adc,
                     sup: sup,
                     time: time,
-                    numero: numero
+                    numero: novo_numero
                 }
     
                 console.log(dados);
@@ -95,7 +94,7 @@ form.metodos = {
                     console.log('xhr', xhr);
                     console.log('ajaxOptions', ajaxOptions);
                     console.log('error', error);
-                    alert("ERRO");
+                    alert("Por favor entrar em contato com a equipe do site para solucionar problema.");
                     return error;
                     reject();
                 }
