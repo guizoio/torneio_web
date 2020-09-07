@@ -63,32 +63,22 @@ form.metodos = {
                 dataType: 'json',
                 success: (response) => {
                     console.log("dentro da request: ", response);
-
-                    alert("Time cadastrado - Boa sorte. Entraremos em contato.");
-                    $('#top').val("");
-                    $('#jg').val("");
-                    $('#mid').val("");
-                    $('#carry').val("");
-                    $('#sup').val("");
-                    $('#time').val("");
-                    $('#numero').val("");
-                    return response;
                     
-                    // var resul = JSON.parse(response[0].retorno);
-                    // console.log("resul: ", resul);
-                    // console.log(resul.resultado);
-                    // if(resul.resultado=="sucesso"){
-                    //     alert("Time cadastrado - Boa sorte. Entraremos em contato.");
-                    //     $('#top').val("");
-                    //     $('#jg').val("");
-                    //     $('#mid').val("");
-                    //     $('#carry').val("");
-                    //     $('#sup').val("");
-                    //     $('#time').val("");
-                    //     $('#numero').val("");
-                    // }
-                    // return response;
-                    // resolve();
+                    var resul = JSON.parse(response[0].retorno);
+                    console.log("resul: ", resul);
+                    console.log(resul.resultado);
+                    if(resul.resultado=="sucesso"){
+                        alert("Time cadastrado - Boa sorte. Entraremos em contato.");
+                        $('#top').val("");
+                        $('#jg').val("");
+                        $('#mid').val("");
+                        $('#carry').val("");
+                        $('#sup').val("");
+                        $('#time').val("");
+                        $('#numero').val("");
+                    }
+                    return response;
+                    resolve();
                 },
                 error: (xhr, ajaxOptions, error) => {
                     console.log('xhr', xhr);
