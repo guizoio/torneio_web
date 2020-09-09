@@ -2,9 +2,21 @@ var form = {};
 
 
 form.metodos = {  
-    
+           
     funcao:async () => {
-        if ($('#customSwitch1').is(':checked')){
+
+        //https://codare.aurelio.net/2009/04/03/javascript-obter-e-mostrar-data-e-hora/#:~:text=Para%20obter%20a%20data%20(e,uma%20vari%C3%A1vel%20var%20dia%20%3D%20data.
+
+        var data = new Date();
+        console.log(data);
+        var dia     = data.getDate();           // 1-31
+        var mes     = data.getMonth();          // 0-11 (zero=janeiro)
+        var ano4    = data.getFullYear();       // 4 dígitos       
+        var str_data = dia + '/' + (mes+1) + '/' + ano4;
+        console.log(str_data);//8/9/2020
+        
+        if(dia>9 && (mes+1)>=9 && ano4>=2020){
+            
             var top     = $('#top').val();
             var jg      = $('#jg').val();
             var mid     = $('#mid').val();
@@ -12,6 +24,7 @@ form.metodos = {
             var sup     = $('#sup').val();
             var time    = $('#time').val();
             var numero  = $('#numero').val();
+            var senha   = $('#senha').val();
     
             if(!top.trim())
                 alert("informe o top lane.");
@@ -26,7 +39,9 @@ form.metodos = {
             else if(!time.trim())
                 alert("informe o nome do time.");
             else if(!numero.trim())
-                alert("informe o numero para contato.");
+                alert("informe o whatsapp para contato.");
+            else if(!senha.trim())
+                alert("informe a senha.");
             else{
                 console.log("cadastrar");
                 var dados = {}
@@ -38,17 +53,18 @@ form.metodos = {
                     adc: adc,
                     sup: sup,
                     time: time,
-                    numero: novo_numero
+                    numero: novo_numero,
+                    senha: senha
                 }
     
                 console.log(dados);
     
                 var url = "http://192.12.115.39:4403/torneio/cadastrar";
                 var retorno = form.metodos.cadastro(dados,url);
-                console.log("DEPOIS QUE CHAMA FUNCAO: ", retorno);      
+                console.log("DEPOIS QUE CHAMA FUNCAO: ", retorno);
             }
         }else{
-            alert("Por favor você não está ciente do valor");
+            alert("Fora do périodo para realizar o cadastro de equipes! Incrições serão apartir do dia 10/09/2020.");
         }
     },
 
@@ -68,7 +84,7 @@ form.metodos = {
                     console.log("resul: ", resul);
                     console.log(resul.resultado);
                     if(resul.resultado=="sucesso"){
-                        alert("Time cadastrado - Boa sorte. Entraremos em contato.");
+                        alert("Time cadastrado - Boa sorte.\nAgora a sua equipe pode logar no sistema usando o nome da equipe e senha cadastrada.");
                         $('#top').val("");
                         $('#jg').val("");
                         $('#mid').val("");
@@ -76,6 +92,7 @@ form.metodos = {
                         $('#sup').val("");
                         $('#time').val("");
                         $('#numero').val("");
+                        $('#senha').val("");
                     }
                     return response;
                     resolve();
